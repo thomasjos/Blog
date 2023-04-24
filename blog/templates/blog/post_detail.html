@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1 class="display-4">{{ post.title }}</h1>
+    <h6 class="text-muted">By {{ post.author.name }} on {{ post.pub_date }}</h6>
+    <hr>
+    <p>{{ post.content }}</p>
+    <a href="{% url 'post_update' post_id=post.id %}" class="btn btn-warning">Edit</a>
+    <a href="{% url 'post_delete' post_id=post.id %}" class="btn btn-danger">Delete</a>
+{% endblock %}
