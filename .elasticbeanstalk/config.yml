@@ -1,0 +1,23 @@
+branch-defaults:
+  main:
+    environment: x22114327-schoolManagementApp-env
+    group_suffix: null
+
+environment-defaults:
+  x22114327-schoolManagementApp-env:
+    branch: null
+    repository: null
+global:
+  application_name: x22114327-schoolManagementApp
+  branch: null
+  default_ec2_keyname: null
+  default_platform: Python 3.7
+  default_region: eu-west-3
+  include_git_submodules: true
+  instance_profile: null
+  platform_name: null
+  platform_version: null
+  profile: null
+  repository: null
+  sc: git
+  workspace_type: Application
