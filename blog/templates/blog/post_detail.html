@@ -5,6 +5,29 @@
     <h6 class="text-muted">By {{ post.author.name }} on {{ post.pub_date }}</h6>
     <hr>
     <p>{{ post.content }}</p>
+    <p><strong>Word count:</strong> {{ word_count }}</p>
+    <p><strong>Estimated reading time:</strong> {{ reading_time }} minute(s)</p>
+    <p><strong>Tags:</strong> {{ tags|join:', ' }}</p>
+    <hr>
+    <h3>Comments</h3>
+    {% for comment in comments %}
+        <div class="comment">
+            <p><strong>{{ comment.author.username }}</strong> <small>{{ comment.created_at }}</small></p>
+            <p>{{ comment.content }}</p>
+        </div>
+    {% empty %}
+        <p>No comments yet.</p>
+    {% endfor %}
+
+    <hr>
+    <h3>Add a comment</h3>
+    <form method="post" action="{% url 'post_detail' post.id %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
     <a href="{% url 'post_update' post_id=post.id %}" class="btn btn-warning">Edit</a>
     <a href="{% url 'post_delete' post_id=post.id %}" class="btn btn-danger">Delete</a>
 {% endblock %}
+
+

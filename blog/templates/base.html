@@ -1,36 +1,46 @@
-{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Blog</title>
-    <!-- Bootstrap 4 CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <!-- Inline CSS -->
+    <title>My Colorful Blog</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet">
     <style>
         body {
             background-color: #f8f9fa;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-
-        .navbar-brand {
-            font-weight: bold;
+        .container {
+            background-color: white;
+            border-radius: 5px;
+            padding: 30px;
+            margin-top: 30px;
+            box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.1);
+        }
+        .navbar {
+            box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.1);
+        }
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+        }
+        .btn-primary:hover {
+            background-color: #0069d9;
+            border-color: #0062cc;
+        }
+        .form-container {
+            max-width: 400px;
+            margin: 0 auto;
         }
     </style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-        <a class="navbar-brand" href="{% url 'index' %}">Blog</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="{% url 'index' %}">My Colorful Blog</a>
+        <div class="collapse navbar-collapse">
             <ul class="navbar-nav ml-auto">
                 {% if user.is_authenticated %}
-                    <li class="nav-item">
-                        <span class="navbar-text">Welcome, {{ user.username }}!</span>
-                    </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'logout' %}">Logout</a>
                     </li>
@@ -45,15 +55,12 @@
             </ul>
         </div>
     </nav>
-
-    <div class="container mt-4">
+    <div class="container">
         {% block content %}
         {% endblock %}
     </div>
-
-    <!-- jQuery, Popper.js, and Bootstrap 4 JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
