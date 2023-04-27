@@ -1,18 +1,17 @@
 branch-defaults:
   main:
-    environment: x22146962-Blog-env
+    environment: x22146962BlogAppEnv
     group_suffix: null
-
 environment-defaults:
-  x22146962-Blog-env:
+  x22146962BlogAppEnv:
     branch: null
     repository: null
 global:
-  application_name: x22146962-Blog
+  application_name: x22146962BlogApp
   branch: null
   default_ec2_keyname: null
   default_platform: Python 3.7
-  default_region: eu-west-3
+  default_region: us-east-2
   include_git_submodules: true
   instance_profile: null
   platform_name: null
