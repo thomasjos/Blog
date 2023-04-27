@@ -1,14 +1,14 @@
 branch-defaults:
   main:
-    environment: x22114327-schoolManagementApp-env
+    environment: x22146962-Blog-env
     group_suffix: null
 
 environment-defaults:
-  x22114327-schoolManagementApp-env:
+  x22146962-Blog-env:
     branch: null
     repository: null
 global:
-  application_name: x22114327-schoolManagementApp
+  application_name: x22146962-Blog
   branch: null
   default_ec2_keyname: null
   default_platform: Python 3.7
